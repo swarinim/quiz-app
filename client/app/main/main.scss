@@ -1,0 +1,75 @@
+.question-form {
+  margin: 20px 0;
+}
+
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #4393B9;
+}
+
+.navbar-text {
+  margin-left: 15px;
+}
+
+.flip-container {
+	-webkit-perspective: 1000;
+	width: 400px;
+	cursor: pointer;
+}
+
+.flipper {
+	transition: 0.6s;
+	-webkit-transform-origin: 100% 200px;
+	-webkit-transform-style: preserve-3d;
+	position: relative;
+	height: 400px;
+}
+
+.on {
+	-webkit-transform: rotateX(-180deg);
+}
+
+.off {
+	-webkit-transform: rotateX(0deg);
+}
+
+.front, .back {
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	-webkit-backface-visibility: hidden;
+  color: #F5F5F5;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+.back h1 {
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.front img{
+  height: 400px;
+  width: 400px;
+  position: absolute;
+}
+
+.flip-container .back {
+	background: #4393B9;
+	-webkit-transform: rotateX(180deg);
+}

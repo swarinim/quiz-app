@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+  <h3 class="page-header">Users managment</h3>
+  <ul class="list-group user-list">
+    <li class="list-group-item" ng-repeat="user in admin.users">
+	    <div class="user-info">
+	        <strong>{{user.name}}</strong><br>
+	        <span class="text-muted">{{user.email}}</span>
+	    </div>
+        <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+    </li>
+  </ul>
+  </div>
+  <div class="row">
+    <h3 class="page-header">Quizs managment</h3>
+    <div class="col-md-6">
+      <h4 class="page-header">List of Quizs</h4>
+      <ul class="nav nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="question in admin.questions">
+        <li>
+          <li><a href="#">{{question.question}}<button type="button" class="close fa fa-trash" ng-click="admin.deleteThing(question)"></button></a></li>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h4 class="page-header">Add new Quiz</h4>
+      <form class="form" name="form" novalidate>
+        <div class="form-group">
+          <label>Question*</label>
+          <input type="text" name="question" class="form-control" ng-model="admin.newQuestion.question" required/>
+        </div>
+        <div class="form-group">
+          <label>Correct answer*</label>
+          <input type="text" name="correctAnswer" class="form-control" ng-model="admin.newQuestion.correctAnswer" required/>
+        </div>
+        <div class="form-group">
+          <label>Options*</label>
+          <input type="text" placeholder="Enter the options separated with ','" name="options" class="form-control" ng-model="admin.newQuestion.options" required/>
+        </div>
+        <div class="form-group">
+          <label>Card image* (max size : 100k)</label>
+          <input onchange="angular.element(this).scope().file_changed(this)" type="file" accept="image/*" required/>
+        </div>
+        <div class="form-group">
+          <label>Description*</label>
+          <input type="text" name="desc" class="form-control" ng-model="admin.newQuestion.desc" required/>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="admin.addThing(form)">Add</button>
+      </form>
+    </div>
+  </div>
+</div>
